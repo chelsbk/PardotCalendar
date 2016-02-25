@@ -53,11 +53,11 @@ button {
 }
 
 #export:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    box-shadow: 1px 1px 0px 2px rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 #share:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    box-shadow: 1px 1px 0px 2px rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 button:active {
@@ -144,38 +144,37 @@ img {
 
 }
 
-#pdfExport {
+.modalContainer {
+  display:flex; 
+  flex-flow:row nowrap;
+  justify-content:space-around;
+  flex-basis:fit-content;
+  align-content:stretch;
+}
+
+.exportIcon {
 	
-	display: flex;
-	flex-flow: row wrap;
-	align-content: space-around;
+	margin-top:20px;	
+	display:flex;
+	flex-flow:wrap;
 
 }
 
-#googleExport {
+#exportArrow {
 
-	display: flex;
-	flex-flow: row wrap;
-	align-content: space-around;
-
-}
-
-#iCalExport {
-	
-	display: flex;
-	flex-flow: row wrap;
-	align-content: space-around;
+	max-width:50px;
+    max-height:20px;
+    width:auto;
+    height:auto;
+    margin: -9px 5px 15px 0px 
 
 }
-
 	</style>
 	
 	
 	<body>
 	
-	<button id="export">Export</button>
-		
-	<button id="share">Share</button>
+	<button id="export"> <img id=exportArrow src="https://cdn4.iconfinder.com/data/icons/icony/512/export-512.png">Export/Share</button>
 	
 		<div class="container">
 			
@@ -187,23 +186,25 @@ img {
   				<!-- Modal content -->
   				<div class="modal-content">
     				<span class="close">x</span>
-    				<p id="title1">Export Calendar</p>
+    				<p id="title1">Export Calendar to:</p>
     					
-    					<div id="pdfExport">
+    					<div class="modalContainer">
+    					
+    					<div class="exportIcon">
     						<img id="pdfIcon" src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/128/pdf.png" alt="Adobe PDF icon" />
     						<p id="pdfTitle">PDF</p>
     						</div>
     						
-						<div id="googleExport">    						
+						<div class="exportIcon">    						
     						<img id="googleCalendarIcon" src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/128/calendar.png" alt="Google Calendar Icon" />
     						<p id="googleTitle">Google Calendar</p>
     						</div>
     						
-    					<div id="iCalExport">
+    					<div class="exportIcon">
     						<img id="iCalIcon" src="http://findicons.com/files/icons/1580/devine_icons_part_2/128/ical.png" alt="iCal icon" />
     						<p id="iCalTitle">iCal</p>
     						</div>
-    				
+    				</div>
   				</div>
   				
   				<div id="myModalShare" class="modal">
